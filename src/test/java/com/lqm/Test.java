@@ -113,7 +113,8 @@ public class Test {
         for (int i = 0; i < purchaseListNEW.size(); i++) {
             BigDecimal residualCostRecord = purchaseListNEW.get(i).getInputPurchasePrice().multiply(purchaseListNEW.get(i).getInputPurchaseCount());
             System.out.println("股票" + purchaseListNEW.get(i).getInputPurchasePrice() + "元购入价" +
-                    "，剩余" + purchaseListNEW.get(i).getInputPurchaseCount() + "股，购入成本剩余：" + residualCostRecord);
+                    "，剩余" + purchaseListNEW.get(i).getInputPurchaseCount() + "股" +
+                    "，购入成本剩余：" + residualCostRecord+(purchaseListNEW.get(i).getFlag().equals("是")?"（历史购入）":"（今日购入）"));
             residualCostRecordTotal = residualCostRecordTotal.add(residualCostRecord);
             residualCountNewTotal = residualCountNewTotal.add(purchaseListNEW.get(i).getInputPurchaseCount());
         }
