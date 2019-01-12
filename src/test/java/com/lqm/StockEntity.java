@@ -3,12 +3,42 @@ package com.lqm;
 import java.math.BigDecimal;
 
 public class StockEntity {
+    /**
+     * 购入价格
+     */
     private BigDecimal inputPurchasePrice;
+    /**
+     * 购入股数
+     */
     private BigDecimal inputPurchaseCount;
+    /**
+     * 卖出价格
+     */
     private BigDecimal inputSalePrice;
+    /**
+     * 卖出股数
+     */
     private BigDecimal inputSaleCount;
-    private BigDecimal purchaseCost;
+    /**
+     * 交易金额
+     */
+    private BigDecimal transactionCost;
+    /**
+     * 是否是历史历史购入记录，“是”或其他任意值
+     */
     private String flag;
+    /**
+     * 是沪市还是深市股票，“沪”或其他任意值
+     */
+    private String stockAreaLogogram;
+    /**
+     * 交易手续费总额
+     */
+    private BigDecimal transactionFee;
+    /**
+     * 交易总金额（交易金额+交易手续费总额）
+     */
+    private BigDecimal transactionCostTotal;
 
     public BigDecimal getInputPurchasePrice() {
         return inputPurchasePrice;
@@ -50,11 +80,35 @@ public class StockEntity {
         this.flag = flag;
     }
 
-    public BigDecimal getPurchaseCost() {
-        return purchaseCost;
+    public String getStockAreaLogogram() {
+        return stockAreaLogogram;
     }
 
-    public void setPurchaseCost(BigDecimal purchaseCost) {
-        this.purchaseCost = purchaseCost;
+    public void setStockAreaLogogram(String stockAreaLogogram) {
+        this.stockAreaLogogram = stockAreaLogogram;
+    }
+
+    public BigDecimal getTransactionFee() {
+        return transactionFee;
+    }
+
+    public void setTransactionFee(BigDecimal transactionFee) {
+        this.transactionFee = transactionFee;
+    }
+
+    public BigDecimal getTransactionCost() {
+        return transactionCost;
+    }
+
+    public void setTransactionCost(BigDecimal transactionCost) {
+        this.transactionCost = transactionCost;
+    }
+
+    public BigDecimal getTransactionCostTotal() {
+        return transactionCostTotal;
+    }
+
+    public void setTransactionCostTotal(BigDecimal transactionCostTotal) {
+        this.transactionCostTotal = transactionCostTotal;
     }
 }
